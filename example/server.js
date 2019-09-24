@@ -1,6 +1,7 @@
 const http = require("http");
+const util = require("util");
 const redis = require("../driver/cache");
-const redisAdaptor = require("../lib/redisAdaptor");
+const redisAdaptor = require("../lib");
 const controller = require("./controller");
 
 redisAdaptor.init(redis);
@@ -18,6 +19,9 @@ http
 
       if (req.url === "/") {
         data = await controller.getAll();
+      } else if (req.url === "/keys") {
+        const getKeys = util.promisify(redis.keys).bind(redis);
+        data = await getKeys("*");
       } else {
         data = await controller.get(req.url);
       }

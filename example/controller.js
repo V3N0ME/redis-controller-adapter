@@ -1,4 +1,4 @@
-const redisAdapter = require("../lib/redisAdaptor");
+const redisAdapter = require("../lib");
 
 class Example {
   constructor() {}
