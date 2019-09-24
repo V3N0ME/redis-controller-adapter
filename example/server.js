@@ -30,3 +30,5 @@ http
     res.end();
   })
   .listen(1234);
+
+console.log("Server running on port " + 1234);

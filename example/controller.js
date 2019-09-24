@@ -1,6 +1,6 @@
 const redisAdapter = require("../lib/redisAdaptor");
 
-class Product {
+class Example {
   constructor() {}
 
   getAll() {
@@ -11,12 +11,12 @@ class Product {
 
   get(id) {
     return new Promise((resolve, reject) => {
-      resolve(id);
+      resolve({ url: id });
     });
   }
 }
 
-module.exports = redisAdapter.use(new Product(), {
-  get: "user:{0}",
-  getAll: "users"
+module.exports = redisAdapter.use(new Example(), {
+  get: "example:{0}",
+  getAll: "examples"
 });
