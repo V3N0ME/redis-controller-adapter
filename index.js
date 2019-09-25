@@ -1,1 +1,1 @@
-module.exports = require('./lib/redisAdaptor');
+module.exports = require("./lib");

@@ -1,7 +1,7 @@
 {
-  "name": "redisadaptor",
+  "name": "redis-controller-adapter",
   "version": "1.0.0",
-  "description": "",
+  "description": "plug and play redis adapter for controllers",
   "main": "index.js",
   "directories": {
     "example": "example",

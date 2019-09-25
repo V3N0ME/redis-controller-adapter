@@ -1,10 +1,11 @@
 const http = require("http");
 const util = require("util");
-const redis = require("../driver/cache");
-const redisAdaptor = require("../lib");
+const redis = require("./driver/cache");
+const redisAdapter = require("../lib");
 const controller = require("./controller");
 
-redisAdaptor.init(redis);
+redisAdapter.init(redis);
+redisAdapter.setDefaultExpiry(1);
 
 http
   .createServer(async (req, res) => {

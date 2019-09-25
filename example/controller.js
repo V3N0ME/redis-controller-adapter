@@ -17,6 +17,6 @@ class Example {
 }
 
 module.exports = redisAdapter.use(new Example(), {
-  get: "example:{0}",
-  getAll: "examples"
+  get: { cacheKey: "example1:{0}" },
+  getAll: { cacheKey: "examples1", expiry: 60 }
 });
