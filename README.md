@@ -23,6 +23,7 @@ redisAdapter.setDefaultExpiry(60);
 ### Usage
 
 ```js
+//controller/example.js
 const redisAdapter = require("redis-controller-adapter");
 
 class Example {
@@ -46,6 +47,14 @@ module.exports = redisAdapter.use(new Example(), {
   getAll: { cacheKey: "examples", expiry: 20 }
 });
 ```
+```js
+//index.js
+const controller = require('./controller/example');
+const data = await controller.get('test');
+
+//data.isCached() returns true if the data was retrieved from redis and false if retrieved from the controller
+console.log(data, data.isCached());
+```
 
 ### Configuration
 
@@ -60,7 +69,6 @@ const config = {
 
 #### Example
 
-Key - example:{0}:{1}
-Function - get(id, value)
-
-calling controller.get(1, 2); will produce example:1:2
+>**Key** - example:{0}:{1}    
+>**Function** - get(id, value)                
+>calling **controller.get(1, 2)** will produce **example:1:2**

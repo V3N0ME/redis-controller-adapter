@@ -5,7 +5,7 @@ const redisAdapter = require("../lib");
 const controller = require("./controller");
 
 redisAdapter.init(redis);
-redisAdapter.setDefaultExpiry(1);
+redisAdapter.setDefaultExpiry(10);
 
 http
   .createServer(async (req, res) => {
@@ -27,7 +27,7 @@ http
         data = await controller.get(req.url);
       }
 
-      res.json({ code: 200, data: data });
+      res.json({ code: 200, data: data, isCached: data.isCached ? data.isCached() : 'false' });
     } catch (err) {
       res.json({ code: 500, msg: err.toString() });
     }
