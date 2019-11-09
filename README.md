@@ -1,3 +1,5 @@
+A plug and redis adapter for controllers. Creates cache keys and verifys them dynamically. All you have to do is configure the format of the cache key for each function
+
 ## Installation
 
 ```bash
@@ -47,7 +49,7 @@ module.exports = redisAdapter.use(new Example(), {
 
 ### Configuration
 
-The function of the controller which requires caching will be the key and an object containing the format of the cache key and it's expiry (optional) will be the value.
+The name of the controller's method which requires caching will be the key and an object containing the format of the cache key and it's expiry (optional) will be the value.
 
 ```js
 const config = {
