@@ -1,4 +1,4 @@
-A plug and redis adapter for controllers. Creates cache keys and verifys them dynamically. All you have to do is configure the format of the cache key for each function
+A plug and play redis adapter for controllers. Creates cache keys and verifys them dynamically. All you have to do is configure the format of the cache key for each function
 
 ## Installation
 
