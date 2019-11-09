@@ -9,8 +9,9 @@ client.on("connect", err => {
   console.log("Redis Connected");
 });
 
-client.on("error", function(err) {
-  //console.log("Error " + err);
+client.on("error", err=> {
+  console.log(err);
+  process.exit(1);
 });
 
 module.exports = client;

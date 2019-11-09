@@ -8,9 +8,8 @@
     "lib": "lib"
   },
   "dependencies": {
-    "string-format": "^2.0.0",
-    "string-template": "^1.0.0",
-    "redis": "^2.8.0"
+    "redis": "^2.8.0",
+    "string-template": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
