@@ -8,7 +8,7 @@
     "lib": "lib"
   },
   "dependencies": {
-    "redis": "^2.8.0",
+    "redis": "^3.1.1",
     "string-template": "^1.0.0"
   },
   "devDependencies": {},
